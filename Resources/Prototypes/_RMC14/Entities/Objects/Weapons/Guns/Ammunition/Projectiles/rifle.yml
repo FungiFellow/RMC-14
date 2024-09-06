@@ -33,3 +33,61 @@
         Piercing: 58
   - type: CMArmorPiercing
     amount: 35
+
+- type: entity
+  id: TranqRifleDart
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Darts/dart_red.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+            - -0.20,0.10
+            - -0.10,0.20
+            - 0.20,-0.10
+            - 0.10,-0.20
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.1
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+  - type: CMArmorPiercing
+    amount: 10
+  - type: Tag
+    tags:
+    - TranqRifleDart
+  - type: EmbeddableProjectile
+    deleteOnRemove: true
+    removalTime: 0.5
+    offset: 0.0,0.0
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: ChloralHydrate #Replace when RMC has equivalent chem
+          Quantity: 15
+        maxVol: 15
+  - type: RefillableSolution
+    solution: ammo
+  - type: DrainableSolution
+    solution: ammo
+  - type: SolutionInjectOnProjectileHit
+    transferAmount: 15
+    solution: ammo
+  - type: InjectableSolution
+    solution: ammo
+
+- type: entity
+  parent: TranqRifleDart
+  id: TranqRifleDartXeno
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Darts/dart_blue.rsi
+  - type: StunOnCollide
+    stunAmount: 45
+    knockdownAmount: 45
