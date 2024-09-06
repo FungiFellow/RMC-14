@@ -452,8 +452,8 @@
     cycleable: true
     whitelist:
       tags:
-      - TranqRifleDart
-    proto: TranqRifleDart
+      - RMCDartCartridge
+    proto: RMCDartCartridge
     capacity: 1
     soundInsert:
       path: /Audio/_RMC14/Weapons/Guns/Reload/grenade_insert.ogg
@@ -490,10 +490,10 @@
           - RMCAttachmentS6ReflexSight
           - RMCAttachmentS84xTelescopicScope
           - RMCAttachmentS42xTelescopicMiniscope
-  - type: AttachableHolderVisuals
-    offsets:
-      rmc-aslot-barrel: 0.75, 0.00
-      rmc-aslot-rail: 0.06, 0.185
+#  - type: AttachableHolderVisuals
+#    offsets:
+#      rmc-aslot-barrel: 0.75, 0.00
+#      rmc-aslot-rail: 0.06, 0.185
 
 - type: Tag
   id: WeaponRifleM54CE2
