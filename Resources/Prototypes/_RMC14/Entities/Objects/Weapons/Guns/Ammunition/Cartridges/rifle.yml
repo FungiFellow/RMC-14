@@ -49,5 +49,36 @@
   - type: CartridgeAmmo
     proto: BulletRifleM4SPRA19
 
+- type: entity
+  id: RMCDartCartridge
+  name: Tranquilizer Dart
+  description: A dart loaded with tranquilizers
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Darts/dart_red.rsi
+  - type: CartridgeAmmo
+    proto: TranqRifleDart
+    deleteOnSpawn: true
+   - type: Tag
+    tags:
+      - RMCDartCartridge
+
+- type: entity
+  parent: RMCDartCartridge
+  id: RMCXenoDartCartridge
+  name: Xeno Tranquilizer Dart
+  description: A dart loaded with enough specialized tranquilizers to knock down a Xeno
+  suffix: DO NOT MAP
+  components: 
+  - type: Sprite
+    sprite: Objects/Fun/Darts/dart_blue.rsi
+  - type: CartridgeAmmo
+    proto: TranqRifleDartXeno
+    deleteOnSpawn: true
+
 - type: Tag
   id: RMCCartridgeRifleM4SPRA19
+
+- type: Tag
+  id: RMCDartCartridge
