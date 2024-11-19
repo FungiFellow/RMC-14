@@ -28,6 +28,7 @@
         RMCSkillConstruction: 1
         RMCSkillEndurance: 2
         RMCSkillFirearms: 1
+        RMCSkillFireman: 1
     - type: EquipSurvivorPreset
       preset: RMCSurvivorPresetCivilian
     - type: Survivor
@@ -43,7 +44,7 @@
     back: RMCSatchelCivilianFill
     shoes: RMCShoesBlack
     id: CMIDCardColonist
-    ears: CMHeadset # TODO RMC14 colony
+    ears: CMHeadset
     pocket1: RMCPouchSurvivalFill
     pocket2: RMCPouchGeneral
 

@@ -1,13 +1,43 @@
+﻿- type: job
+  parent: CMSurvivor
+  id: RMCMedicalSurvivor
+  name: cm-job-name-medical-survivor
+  description: cm-job-description-survivor
+  playTimeTracker: RMCJobSurvivorMedical
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: CMSquad
+    time: 18000 # 5 hours
+  - !type:TotalJobsTimeRequirement
+    group: CMJobsEngineering
+    time: 18000 # 5 hours
+  - !type:TotalJobsTimeRequirement
+    group: CMJobsMedical
+    time: 18000 # 5 hours
+  startingGear: RMCGearSurvivorDoctor
+  accessGroups:
+  - ColonistMedical
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills
+      skills:
+        RMCSkillMedical: 3
+        RMCSkillSurgery: 2
+    - type: EquipSurvivorPreset
+      preset: RMCSurvivorPresetMedical
+
 ﻿- type: startingGear
-  id: RMCGearSurvivorDoctor
+  id: RMCGearSurvivorDoctor #Port Outer clothing: Labcoat, 15 bio armor
   equipment:
     head: CMHeadCapSurgBlue
     mask: CMMaskSterile
-    jumpsuit: CMJumpsuitColonist # TODO RMC14 /obj/item/clothing/under/rank/medical
+    jumpsuit: CMJumpsuitLiaisonBlue 
     back: CMSatchelMedical
     gloves: CMHandsLatex
-    shoes: ClothingShoesColorWhite
-    id: CMIDCardColonist
+    shoes: RMCShoesLaceup
+    id: CMIDCardColonist 
+    eyes: RMCGlassesMedicalHUDGlasses
     ears: CMHeadsetColony
     pocket1: RMCM5Bayonet
     pocket2: RMCFlashlight
@@ -18,9 +48,13 @@
   name: survivor doctor spawn point
   components:
   - type: SpawnPoint
-    job_id: CMSurvivor
+    job_id: RMCMedicalSurvivor
   - type: Sprite
     layers:
     - sprite: Markers/jobs.rsi
       state: green
     - state: survivor
+
+- type: playTimeTracker
+  id: RMCJobSurvivorMedical
+  isHumanoid: true
